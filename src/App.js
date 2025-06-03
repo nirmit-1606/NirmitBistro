@@ -11,7 +11,7 @@ import './styles/App.css';
 function App() {
   return (
     <>
-      <Router>
+      <Router basename="/NirmitBistro">
         <nav className="navbar">
           <div className="navbar-logo">🍽️ Nirmit's Bistro</div>
           <div className="navbar-links">
