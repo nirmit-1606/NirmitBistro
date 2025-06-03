@@ -1,0 +1,18 @@
+.menu-page {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.menu-page h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
