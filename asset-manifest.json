@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/NirmitBistro/static/css/main.bc87d866.css",
-    "main.js": "/NirmitBistro/static/js/main.12cd394d.js",
+    "main.js": "/NirmitBistro/static/js/main.f803b25d.js",
     "index.html": "/NirmitBistro/index.html",
     "main.bc87d866.css.map": "/NirmitBistro/static/css/main.bc87d866.css.map",
-    "main.12cd394d.js.map": "/NirmitBistro/static/js/main.12cd394d.js.map"
+    "main.f803b25d.js.map": "/NirmitBistro/static/js/main.f803b25d.js.map"
   },
   "entrypoints": [
     "static/css/main.bc87d866.css",
-    "static/js/main.12cd394d.js"
+    "static/js/main.f803b25d.js"
   ]
 }
