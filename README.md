@@ -5,6 +5,8 @@ A fully responsive, single-page restaurant menu web app built using **React** an
 🟢 **Live Site:**  
 [https://nirmit-1606.github.io/NirmitBistro/](https://nirmit-1606.github.io/NirmitBistro/)
 
+---
+
 ### 🛠️ Overview
 
 NirmitBistro is a dynamic food menu application where users can:
@@ -16,6 +18,8 @@ NirmitBistro is a dynamic food menu application where users can:
 - Persist cart data across sessions with localStorage
 <!-- - Deploy the entire application via GitHub Pages -->
 
+---
+
 ### ✨ Key Features
 
 - 📦 Redux Cart Management: Users can add, increment, and decrement items, or remove them entirely.
@@ -25,7 +29,9 @@ NirmitBistro is a dynamic food menu application where users can:
 - 🎨 Responsive Design: Layout adapts well across devices.
 - 📂 Custom Subpath Hosting: App is configured to work under GitHub Pages subdirectory (/NirmitBistro) using basename and homepage settings.
 
+---
+
 ### 📦 API
 
-The app fetches real meal data from:
+The app fetches meal data from:
 [https://dummyjson.com/recipes](https://dummyjson.com/recipes)
