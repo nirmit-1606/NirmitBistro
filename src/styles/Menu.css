@@ -10,6 +10,22 @@
   margin-bottom: 1.5rem;
 }
 
+.menu-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.menu-controls input,
+.menu-controls select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 220px;
+}
+
 .menu-grid {
   display: flex;
   flex-wrap: wrap;
