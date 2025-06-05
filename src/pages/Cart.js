@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart, addToCart, decreaseQuantity } from '../features/cart/cartSlice';
 import { Trash2 } from 'lucide-react';
+import { toast } from 'react-toastify';
 import '../styles/Cart.css';
 
 const Cart = () => {
@@ -51,7 +52,14 @@ const Cart = () => {
           ))}
           <div className="cart-summary">
             <h3>Total: ${getTotal()}</h3>
-            <button className="clear-cart-btn" onClick={() => dispatch(clearCart())} title="Clear Cart">
+            <button
+              className="clear-cart-btn"
+              onClick={() => {
+                dispatch(clearCart());
+                toast.info("Cart cleared.");
+              }}
+              title="Clear Cart"
+            >
               <Trash2 size={20} /> Clear Cart
             </button>
           </div>
