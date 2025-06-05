@@ -7,15 +7,21 @@ import '../styles/Menu.css';
 const Menu = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCuisine, setSelectedCuisine] = useState('All');
+  const [selectedTag, setSelectedTag] = useState('All');
 
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.recipes);
-  
+
+  console.log(items);
+
   const filteredItems = items.filter((item) => {
-    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.cuisine.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCuisine = selectedCuisine === 'All' || item.cuisine === selectedCuisine;
-    return matchesSearch && matchesCuisine;
+    const matchesTag = selectedTag === 'All' || (item.tags || []).includes(selectedTag);
+    return matchesSearch && matchesCuisine && matchesTag;
   });
+
 
   useEffect(() => {
     dispatch(fetchRecipes());
@@ -37,6 +43,13 @@ const Menu = () => {
             <option key={cuisine} value={cuisine}>{cuisine}</option>
           ))}
         </select>
+        <select value={selectedTag} onChange={(e) => setSelectedTag(e.target.value)}>
+          <option value="All">All Tags</option>
+          {[...new Set(items.flatMap((i) => i.tags || []))].map((tag) => (
+            <option key={tag} value={tag}>{tag}</option>
+          ))}
+        </select>
+
       </div>
       {status === 'loading' && <p>Loading...</p>}
       {status === 'succeeded' && (
