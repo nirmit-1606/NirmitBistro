@@ -26,7 +26,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
-      <ToastContainer position="bottom-right" autoClose={2000} />
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </>
   );
 }
