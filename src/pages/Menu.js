@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchRecipes } from '../features/recipes/recipesSlice';
 import RecipeCard from '../components/RecipeCard';
 import '../styles/Menu.css';
+import noResultsImage from '../assets/images/no-results.svg';
 
 const Menu = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,8 +12,6 @@ const Menu = () => {
 
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.recipes);
-
-  console.log(items);
 
   const filteredItems = items.filter((item) => {
     const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -53,11 +52,18 @@ const Menu = () => {
       </div>
       {status === 'loading' && <p>Loading...</p>}
       {status === 'succeeded' && (
-        <div className="menu-grid">
-          {filteredItems.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
+        filteredItems.length > 0 ? (
+          <div className="menu-grid">
+            {filteredItems.map((recipe) => (
+              <RecipeCard key={recipe.id} recipe={recipe} />
+            ))}
+          </div>
+        ) : (
+          <div className="no-results">
+            <img src={noResultsImage} alt="No results" />
+            <p>No matching dishes found. Try adjusting your search or filters!</p>
+          </div>
+        )
       )}
       {status === 'failed' && <p>Failed to load recipes.</p>}
     </div>

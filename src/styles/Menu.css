@@ -32,3 +32,16 @@
   gap: 1.5rem;
   justify-content: center;
 }
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  color: #777;
+  row-gap: 3rem;
+}
+
+.no-results img {
+  max-width: 300px;
+}
