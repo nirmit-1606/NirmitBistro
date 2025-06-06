@@ -14,13 +14,18 @@ const Menu = () => {
   const { items, status } = useSelector((state) => state.recipes);
 
   const filteredItems = items.filter((item) => {
-    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.cuisine.toLowerCase().includes(searchTerm.toLowerCase());
+    const lowerSearch = searchTerm.toLowerCase();
+
+    const matchesSearch =
+      item.name.toLowerCase().includes(lowerSearch) ||
+      item.cuisine.toLowerCase().includes(lowerSearch) ||
+      (item.tags || []).some(tag => tag.toLowerCase().includes(lowerSearch));
+
     const matchesCuisine = selectedCuisine === 'All' || item.cuisine === selectedCuisine;
     const matchesTag = selectedTag === 'All' || (item.tags || []).includes(selectedTag);
+
     return matchesSearch && matchesCuisine && matchesTag;
   });
-
 
   useEffect(() => {
     dispatch(fetchRecipes());
