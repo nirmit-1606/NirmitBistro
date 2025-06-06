@@ -27,6 +27,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "postbuild": "cp build/index.html build/404.html",
     "clean": "rm -rf build"
   },
   "eslintConfig": {
